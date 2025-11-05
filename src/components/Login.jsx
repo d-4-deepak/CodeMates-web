@@ -9,6 +9,7 @@ function Login() {
 
     const [emailId,setEmailId] = useState("simran@gmail.com");
     const [password, setPassword]= useState("Simran@123");
+    const [error, setError] = useState();
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -22,7 +23,7 @@ function Login() {
       navigate("/");
       
      }catch(err){
-      console.error(err.message);
+      setError(err.response.data || "Something went wrong");
       
      }
     }
@@ -54,6 +55,8 @@ function Login() {
 </div>
 
     </div>
+
+    {error && <p className='text-red-600 font-bold '>{error}</p>}
 
     <div className="card-actions justify-center my-4">
       <button className="btn btn-primary bg-base-300 border-0" onClick={handleLogin}>login</button>

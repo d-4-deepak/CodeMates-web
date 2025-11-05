@@ -30,9 +30,11 @@ const Body = () => {
   },[])
 
   return (
-    <div  className="  min-h-screen bg-[url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1950&q=80')]  bg-cover bg-center">
+    <div  className="  min-h-screen flex flex-col bg-fixed bg-cover bg-no-repeat  bg-[url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1950&q=80')]  bg-cover bg-center">
       <NavBar/>
+      <main className='flex-grow'>
       <Outlet/>
+      </main>
       <Footer />
     </div>
   )
