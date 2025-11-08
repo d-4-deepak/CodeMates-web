@@ -14,6 +14,7 @@ function Login() {
     const navigate = useNavigate();
 
     const handleLogin = async ()=>{
+      setError("")
      try{
     const res = await axios.post(BASE_URL+ "/login",{
         emailId,
@@ -23,7 +24,15 @@ function Login() {
       navigate("/");
       
      }catch(err){
-      setError(err.response.data || "Something went wrong");
+      if(err.response){
+          // server responded but with an error (e.g., 400, 401)
+    setError(err.response.data || "Something went wrong");
+      }else if(err.request){
+        // request made but no response (server offline or not reachable)
+    setError("Server is not reachable. Please try again later.");
+      }else{
+        setError("An unexpected error occurred.");
+      }
       
      }
     }

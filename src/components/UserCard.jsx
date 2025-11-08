@@ -14,7 +14,7 @@ const UserCard = ({feedData,title}) => {
       src={photoUrl}
       alt="Shoes" />
   </figure>
-  <div className="card-body">
+  <div className="card-body m-4">
     <h2 className="card-title">{firstName+" "+lastName}</h2>
    {(age || gender) &&<div className="flex gap-2">
         {age &&<span><span className='font-bold'>Age: </span><span>{age} </span></span>}

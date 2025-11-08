@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../utils/userSlice';
 import { addConnections } from '../utils/connectionSlice';
+import ConnectionCard from './connectionCard';
 
 const Connection = () => {
     const dispatch = useDispatch();
@@ -22,7 +23,9 @@ const Connection = () => {
         }
     }
     useEffect(()=>{
+   
         getConnections();
+      
     },[])
     if(!connections) return;
     if(connections.length==0){
@@ -35,24 +38,24 @@ const Connection = () => {
 
         {
           connections && connections.map((connection)=>{
-                const {firstName,lastName,age,photoUrl,gender,about,skills} = connection;
                 return(
-                    <div className="flex items-center  bg-base-300 m-1 min-w-[330px] w-1/2 p-3">
-            <div>  
-                <img src={photoUrl} alt='image' className='h-16 w-16 rounded-full '/>
-                </div>                  
-     <div className='px-4  '>
+                    <ConnectionCard connection={connection} />
+    //                 <div className="flex items-center  bg-base-300 m-1 min-w-[330px] w-1/2 p-3">
+    //         <div>  
+    //             <img src={photoUrl} alt='image' className='h-16 w-16 rounded-full '/>
+    //             </div>                  
+    //  <div className='px-4  '>
 
-        <div className='font-bold text-xl'>{firstName+" "+lastName}</div>
+    //     <div className='font-bold text-xl'>{firstName+" "+lastName}</div>
                         
-                        {(age || gender) &&<div className="flex gap-2">
-        {age &&<span><span className='font-bold'>Age: </span><span>{age} </span></span>}
-        {gender &&<span><span className='font-bold'>Gender: </span><span>{gender} </span></span>}
-    </div>}
-                        {/* <p>{about}</p> */}
-                      { skills.length!=0 && <p><span className='font-bold'>Skills: </span>{skills.map((skill)=>skill+", ")}</p>}
-                        </div>
-                    </div>
+    //                     {(age || gender) &&<div className="flex gap-2">
+    //     {age &&<span><span className='font-bold'>Age: </span><span>{age} </span></span>}
+    //     {gender &&<span><span className='font-bold'>Gender: </span><span>{gender} </span></span>}
+    // </div>}
+    //                     {/* <p>{about}</p> */}
+    //                   { skills.length!=0 && <p><span className='font-bold'>Skills: </span>{skills.map((skill)=>skill+", ")}</p>}
+    //                     </div>
+    //                 </div>
 
                 )
             })
