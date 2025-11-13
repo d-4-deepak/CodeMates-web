@@ -10,7 +10,8 @@ import UserCard from './UserCard';
 const Feed = () => {
   const dispatch = useDispatch();
   const feedData = useSelector((store)=>store.feed);
-  console.log(feedData);
+
+  
   
 
   const getFeed = async ()=>{
@@ -27,19 +28,24 @@ const Feed = () => {
   }
 
   useEffect(()=>{
-    if(!feedData){
+    if(!feedData || feedData.length === 0){
       getFeed();
     }
-    
-  },[])
+  }, [feedData])
    
-      
+  if (!feedData) {
+    return <h1>Loading...</h1>;
+  }
+  
+  if (feedData.length === 0) {
+    return <h1>No new User!</h1>;
+  }
   return (
     <>
     <div className='flex flex-col items-center justify-center my-4 '>
-        {feedData && feedData.map((feedItem)=>{
-          return <div className='my-2 '> <UserCard feedData={feedItem} /> </div>
-        })}
+       
+        {feedData && <div  className='my-2'> <UserCard feedData={feedData[0]} /> </div>
+      }
     </div>
     </>
   )

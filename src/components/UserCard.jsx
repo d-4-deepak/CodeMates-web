@@ -1,8 +1,21 @@
+import axios from 'axios';
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { BASE_URL } from '../utils/constants';
+import { removeFromFeed } from '../utils/feedSlice';
 
 const UserCard = ({feedData,title}) => {
-    const {photoUrl, firstName, lastName,skills,about,age,gender} = feedData;
-    console.log("userFeed",feedData);
+    const {_id,photoUrl, firstName, lastName,skills,about,age,gender} = feedData;
+    const dispatch = useDispatch();
+    const handleSendRqeuest = async (status,userId)=>{
+      try{
+        const res = await axios.post(BASE_URL+"/request/send/"+status+"/"+userId,{},{withCredentials:true});
+        dispatch(removeFromFeed(userId));
+      }catch(err){
+        console.error(err.message);
+        
+      }
+    }
     
   return (
     <div>
@@ -23,8 +36,8 @@ const UserCard = ({feedData,title}) => {
     <p><span className='font-bold'>About: </span> {about}</p>
 {   skills && <p><span className='font-bold'>Skills: </span> {skills.map((skill)=>skill+", ")}</p>
 }    <div className="card-actions justify-center">
-      <button className="btn btn-primary">Ignore</button>
-      <button className="btn btn-primary bg-pink-600 border-0">Interested</button>
+      <button className="btn btn-primary" onClick={()=>handleSendRqeuest("ignored",_id)}>Ignore</button>
+      <button className="btn btn-primary bg-pink-600 border-0" onClick={()=>handleSendRqeuest("interested",_id)}>Interested</button>
     </div>
   </div>
 </div>

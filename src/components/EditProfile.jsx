@@ -12,7 +12,7 @@ const EditProfile = ({user}) => {
         const [newLastName, setNewLastName]= useState(lastName);
         const [newPhotoUrl, setNewPhotoUrl]= useState(photoUrl);
         const [newEmailId, setNewEmailId]= useState(emailId);
-        const [newAge, setNewAge]= useState(age);
+        const [newAge, setNewAge]= useState(age||"");
         const [newGender, setNewGender]= useState(gender);
         const [newSkills, setNewSkills]= useState(skills.map((skill)=>skill));
         const [inputSkill,setInputSkill] = useState("");
@@ -81,7 +81,7 @@ const EditProfile = ({user}) => {
   <div className="label">
     <span className="label-text text-white font-bold">Email ID</span>
   </div>
-  <input type="emailId" className="input input-bordered w-full max-w-xs" value={newEmailId} />
+  <input type="emailId" className="input input-bordered w-full max-w-xs"  readOnly value={newEmailId} />
 </label>
 </div>
 
