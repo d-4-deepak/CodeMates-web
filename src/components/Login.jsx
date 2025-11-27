@@ -74,16 +74,16 @@ function Login() {
   <div className="label ">
     <span className="label-text text-white font-bold">First Name </span>
   </div>
-  <input type="text" className="input input-bordered w-full max-w-xs bg-[#38476F]" value={firstName} onChange={(e)=>setFirstName(e.target.value)} />
+  <input type="text" className="input input-bordered w-full max-w-xs text-white bg-[#38476F]" value={firstName} onChange={(e)=>setFirstName(e.target.value)} />
 </label>
    </div>
 
    <div className='my-2'>
    <label className="form-control w-full max-w-xs ">
   <div className="label ">
-    <span className="label-text text-white font-bold">Last Name </span>
+    <span className="label-text text-white  font-bold">Last Name </span>
   </div>
-  <input type="text" className="input input-bordered w-full max-w-xs  bg-[#38476F]" value={lastName} onChange={(e)=>setLastName(e.target.value)} />
+  <input type="text" className="input input-bordered w-full max-w-xs text-white bg-[#38476F]" value={lastName} onChange={(e)=>setLastName(e.target.value)} />
 </label>
    </div> </>}
 
@@ -92,7 +92,7 @@ function Login() {
   <div className="label ">
     <span className="label-text text-white font-bold">Email ID </span>
   </div>
-  <input type="text" className="input input-bordered w-full max-w-xs  bg-[#38476F]" value={emailId} onChange={(e)=>setEmailId(e.target.value)} />
+  <input type="text" className="input input-bordered w-full max-w-xs text-white bg-[#38476F]" value={emailId} onChange={(e)=>setEmailId(e.target.value)} />
 </label>
    </div>
 
@@ -101,7 +101,7 @@ function Login() {
   <div className="label">
     <span className="label-text text-white font-bold">Password</span>
   </div>
-  <input type="password" className="input input-bordered w-full max-w-xs  bg-[#38476F]" value={password} onChange={(e)=>setPassword(e.target.value)} />
+  <input type="password" className="input input-bordered w-full max-w-xs text-white bg-[#38476F]" value={password} onChange={(e)=>setPassword(e.target.value)} />
 </label>
 </div>
 

@@ -51,7 +51,7 @@ const EditProfile = ({user}) => {
    <>
     <div className='flex flex-wrap my-10 justify-center '>
          <div className='flex justify-center mx-10 mb-10 '>
-     <div className="card bg-base-300  w-96 shadow-sm">
+     <div className="card bg-[#15191E]  w-96 shadow-sm">
   <div className="card-body">
     <h2 className="card-title justify-center text-white font-bold">Edit Profile</h2>
 
@@ -62,7 +62,7 @@ const EditProfile = ({user}) => {
   <div className="label ">
     <span className="label-text text-white font-bold">First Name </span>
   </div>
-  <input type="text" className="input input-bordered w-full max-w-xs" value={newFirstName} onChange={(e)=>setNewFirstName(e.target.value)} />
+  <input type="text" className="input input-bordered w-full max-w-xs bg-[#38476F] text-white" value={newFirstName} onChange={(e)=>setNewFirstName(e.target.value)} />
 </label>
    </div>
 
@@ -71,7 +71,7 @@ const EditProfile = ({user}) => {
   <div className="label">
     <span className="label-text text-white font-bold">Last Name</span>
   </div>
-  <input type="text" className="input input-bordered w-full max-w-xs" value={newLastName} onChange={(e)=>setNewLastName(e.target.value)} />
+  <input type="text" className="input input-bordered w-full max-w-xs text-white" value={newLastName} onChange={(e)=>setNewLastName(e.target.value)} />
 </label>
 </div>
 
@@ -81,7 +81,7 @@ const EditProfile = ({user}) => {
   <div className="label">
     <span className="label-text text-white font-bold">Email ID</span>
   </div>
-  <input type="emailId" className="input input-bordered w-full max-w-xs"  readOnly value={newEmailId} />
+  <input type="emailId" className="input input-bordered w-full max-w-xs text-white"  readOnly value={newEmailId} />
 </label>
 </div>
 
@@ -90,7 +90,7 @@ const EditProfile = ({user}) => {
   <div className="label">
     <span className="label-text text-white font-bold">photo Url</span>
   </div>
-  <input type="text" className="input input-bordered w-full max-w-xs" value={newPhotoUrl} onChange={(e)=>setNewPhotoUrl(e.target.value)} />
+  <input type="text" className="input input-bordered w-full max-w-xs text-white" value={newPhotoUrl} onChange={(e)=>setNewPhotoUrl(e.target.value)} />
 </label>
 </div>
 
@@ -100,7 +100,7 @@ const EditProfile = ({user}) => {
   <div className="label">
     <span className="label-text text-white font-bold">Age</span>
   </div>
-  <input type="number" className="input input-bordered w-full max-w-xs" value={newAge} onChange={(e)=>setNewAge(e.target.value)} />
+  <input type="number" className="input input-bordered w-full max-w-xs text-white" value={newAge} onChange={(e)=>setNewAge(e.target.value)} />
 </label>
 </div>
 
@@ -156,7 +156,7 @@ const EditProfile = ({user}) => {
   <div className="label">
     <span className="label-text text-white font-bold">About</span>
   </div>
-  <textarea  className="textarea textarea-bordered w-full max-w-xs " value={newAbout} onChange={(e)=>{
+  <textarea  className="textarea textarea-bordered w-full max-w-xs text-white" value={newAbout} onChange={(e)=>{
        if(e.target.value.length<=200){
         setNewAbout((e.target.value))
         setError("")
@@ -172,14 +172,14 @@ const EditProfile = ({user}) => {
   <div className="label">
     <span className="label-text text-white font-bold">Skills</span>
   </div>
-  <input type="text" className="input input-bordered w-full max-w-xs" value={inputSkill} onChange={(e)=>setInputSkill(e.target.value)} onKeyDown={handleSkill} />
+  <input type="text" className="input input-bordered w-full max-w-xs text-white" value={inputSkill} onChange={(e)=>setInputSkill(e.target.value)} onKeyDown={handleSkill} />
 </label>
 
 <div className="m-2 flex flex-wrap">
   {newSkills.map((skill, index) => (
     <div
       key={index}
-      className="relative inline-flex items-center bg-base-100 m-2 py-1 px-4 border rounded-xl shadow-sm"
+      className="relative inline-flex items-center bg-[#38476F] m-2 py-1 px-4 border rounded-xl shadow-sm"
     >
       <span className="text-sm font-medium text-white">{skill}</span>
 
