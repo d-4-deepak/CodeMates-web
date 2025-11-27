@@ -71,7 +71,7 @@ const EditProfile = ({user}) => {
   <div className="label">
     <span className="label-text text-white font-bold">Last Name</span>
   </div>
-  <input type="text" className="input input-bordered w-full max-w-xs text-white" value={newLastName} onChange={(e)=>setNewLastName(e.target.value)} />
+  <input type="text" className="input input-bordered w-full max-w-xs bg-[#38476F] text-white" value={newLastName} onChange={(e)=>setNewLastName(e.target.value)} />
 </label>
 </div>
 
@@ -81,7 +81,7 @@ const EditProfile = ({user}) => {
   <div className="label">
     <span className="label-text text-white font-bold">Email ID</span>
   </div>
-  <input type="emailId" className="input input-bordered w-full max-w-xs text-white"  readOnly value={newEmailId} />
+  <input type="emailId" className="input input-bordered w-full max-w-xs bg-[#38476F] text-white"  readOnly value={newEmailId} />
 </label>
 </div>
 
@@ -90,7 +90,7 @@ const EditProfile = ({user}) => {
   <div className="label">
     <span className="label-text text-white font-bold">photo Url</span>
   </div>
-  <input type="text" className="input input-bordered w-full max-w-xs text-white" value={newPhotoUrl} onChange={(e)=>setNewPhotoUrl(e.target.value)} />
+  <input type="text" className="input input-bordered w-full max-w-xs bg-[#38476F] text-white" value={newPhotoUrl} onChange={(e)=>setNewPhotoUrl(e.target.value)} />
 </label>
 </div>
 
@@ -100,7 +100,7 @@ const EditProfile = ({user}) => {
   <div className="label">
     <span className="label-text text-white font-bold">Age</span>
   </div>
-  <input type="number" className="input input-bordered w-full max-w-xs text-white" value={newAge} onChange={(e)=>setNewAge(e.target.value)} />
+  <input type="number" className="input input-bordered w-full max-w-xs bg-[#38476F] text-white" value={newAge} onChange={(e)=>setNewAge(e.target.value)} />
 </label>
 </div>
 
@@ -156,7 +156,7 @@ const EditProfile = ({user}) => {
   <div className="label">
     <span className="label-text text-white font-bold">About</span>
   </div>
-  <textarea  className="textarea textarea-bordered w-full max-w-xs text-white" value={newAbout} onChange={(e)=>{
+  <textarea  className="textarea textarea-bordered w-full max-w-xs bg-[#38476F] text-white" value={newAbout} onChange={(e)=>{
        if(e.target.value.length<=200){
         setNewAbout((e.target.value))
         setError("")
@@ -172,7 +172,7 @@ const EditProfile = ({user}) => {
   <div className="label">
     <span className="label-text text-white font-bold">Skills</span>
   </div>
-  <input type="text" className="input input-bordered w-full max-w-xs text-white" value={inputSkill} onChange={(e)=>setInputSkill(e.target.value)} onKeyDown={handleSkill} />
+  <input type="text" className="input input-bordered w-full max-w-xs bg-[#38476F] text-white" value={inputSkill} onChange={(e)=>setInputSkill(e.target.value)} onKeyDown={handleSkill} />
 </label>
 
 <div className="m-2 flex flex-wrap">
@@ -203,7 +203,7 @@ const EditProfile = ({user}) => {
     {error && <p className='text-red-600 font-bold '>{error}</p>}
 
     <div className="card-actions justify-center my-4">
-      <button className="btn btn-primary bg-base-300 border-0" onClick={saveProfile} >Save</button>
+      <button className="btn btn-primary bg-base-300 border-0 bg-[#38476F]" onClick={saveProfile} >Save</button>
     </div>
   </div>
 </div>
